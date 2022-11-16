@@ -2,56 +2,72 @@
 
 :root {
     --primary-color: #46B6E5;
-    --dark-gray: #8e8e8e;
-    --blue-gray: #6699cc;
+    --dark-gray: #626262;
+    --blue-gray: #a2b1c0;
 
 
 }
 
 body {
     font-family: sans-serif;
-    margin: 0px;
+    margin: 0px auto;
+    max-width: 100%;
+    width: 100%;
 }
 
 hr {
     margin: 2rem 0rem;
 }
 
+/** spaces **/
+
+.margin-md {
+    margin: 2rem;
+}
+
 /** container **/
 .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0rem 1rem;
 }
 
 .container-center {
-    max-width: 600px;
+    max-width: 900px;
+    width: 100%;
     margin: auto;
 }
 
-/** links**/
+/** links **/
 .link {
     box-sizing: border-box;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 
 .link-primary {
+    max-width: 140px;
+    padding: 0.6rem 1.2rem;
     background-color: var(--primary-color);
-    border-radius: 0.5rem;
-    color: white;
+    color: #fff;
+    margin: 1rem auto;
+    border-radius: 2rem;
 }
 
 .link-secondary {
-    color: var(--primary-color);
-    border-radius: 0.5rem;
+    max-width: 140px;
+    margin: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
     border: 1px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
-/** list **/
+/** look into BEM naming convention for CSS **/
+
+/** lists **/
+
 .list-non-bullet {
     list-style: none;
+    padding-inline-start: 0px;
 }
 
 .list-item-inline {
@@ -65,21 +81,25 @@ hr {
     background-color: var(--primary-color);
     color: white;
     padding: 1rem;
-    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 
 .navigation .nav-brand {
     font-weight: bold;
-    font-size: large;
+}
 
+.nav-brand a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .navigation .nav-pills {
     text-align: right;
+    margin: 0.6rem 1rem;
 }
 
 .navigation .link {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .navigation .link-active {
@@ -90,37 +110,44 @@ hr {
 
 .hero {
     padding: 2rem;
+    padding-top: 5rem;
 }
 
 .hero .hero-img {
-    max-width: 350px;
+    max-width: 80%;
+    width: 550px;
     display: block;
     margin: auto;
 }
 
 .hero .hero-heading {
-    padding-top: 1rem;
-    color: var(--blue-gray);
     text-align: center;
-
+    padding-top: 1rem;
+    color: var(--dark-gray);
 }
 
-/** section **/
+.hero .hero-heading .heading-inverted {
+    color: var(--primary-color);
+}
+
+/** sections **/
 
 .section {
     padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    text-align: center;
 }
 
 .section h1 {
     text-align: center;
-
 }
 
 .ow {
-    background-color: var(--dark-gray);
+    background-color: var(--blue-gray);
 }
 
-/** footer **/
+/** footers **/
 
 .footer {
     background-color: var(--primary-color);
@@ -128,7 +155,6 @@ hr {
     text-align: center;
     color: white;
     border-top-right-radius: 1rem;
-
 }
 
 .footer .link {
@@ -140,6 +166,68 @@ hr {
     font-size: large;
 }
 
-.footer .ul {
+.footer ul {
     padding-inline-start: 0px;
+}
+
+/** projects **/
+.showcase-list {
+    /* padding: 2rem; */
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 3rem auto;
+}
+
+.showcase-list h1 {
+    margin: 0.5rem;
+}
+
+.showcase-list p {
+    padding-bottom: 1rem;
+}
+
+/** blogs **/
+
+.showcase-blog {
+    padding-bottom: 6rem;
+}
+
+@media (max-width: 900px) {
+    body {
+        max-width: 95%;
+        width: 100%;
+    }
+
+    .list-item-inline {
+        display: inline;
+        padding: 0rem;
+    }
+
+    .container-center {
+        width: auto;
+    }
+
+    .link-primary {
+        display: block;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+footer p {
+    font-size: x-large;
+    padding: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+a, 
+i {
+    width: 30px;
+    height: 30px;
+    padding: 3px;
 }
